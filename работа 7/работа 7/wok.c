@@ -23,42 +23,20 @@ int main()
 }
 int work1() {
 	char c;
-	printf("Введите цифру или букву: ");
-	scanf("%c", &c);
-	switch (c)
-	{
-	case '1':
-		printf("Это цифра.\n");
+	printf("Введите символ: ");
+	scanf(" %c", &c);
+
+	switch (c) {
+	case '0': case '1': case '2': case '3': case '4':
+	case '5': case '6': case '7': case '8': case '9':
+		printf("Это цифра\n");
 		break;
-	case '2':
-		printf("Это цифра.\n");
-		break;
-	case '3':
-		printf("Это цифра.\n");
-		break;
-	case '4':
-		printf("Это цифра.\n");
-		break;
-	case '5':
-		printf("Это цифра.\n");
-		break;
-	case '6':
-		printf("Это цифра.\n");
-		break;
-	case '7':
-		printf("Это цифра.\n");
-		break;
-	case '8':
-		printf("Это цифра.\n");
-		break;
-	case '9':
-		printf("Это цифра.\n");
-		break;
-	case '0':
-		printf("Это цифра.\n");
+	case 'a': case 'b': case 'c':
+		printf("Это буква\n");
 		break;
 	default:
-		printf("Это буква\n");
+		printf("Неизвестный символ\n");
+		break;
 	}
 	return 0;
 }
@@ -77,19 +55,26 @@ int work2()
 	scanf(" %c", &c);
 	printf("\n");
 	printf("%f%c%f", a, c, b);
-	switch (c)
-	{
+	switch (c) {
 	case '+':
-		printf("=%f", a + b);
+		printf(" = %f", a + b);
 		break;
 	case '-':
-		printf("=%f", a - b);
+		printf(" = %f", a - b);
 		break;
 	case '*':
-		printf("=%f", a * b);
+		printf(" = %f", a * b);
 		break;
 	case '/':
-		printf("=%f", a / b);
+		if (b != 0) {
+			printf(" = %f", a / b);
+		}
+		else {
+			printf(" = Ошибка: деление на ноль!");
+		}
+		break;
+	default:
+		printf(" — Неизвестная операция");
 		break;
 	}
 	printf("\n");
@@ -103,19 +88,19 @@ int work3()
 	printf("\n");
 	switch (N % 10)
 	{
-	case '2':
+	case 2:
 		printf("Последняя цифра числа - не простое число");
 		break;
-	case '4':
+	case 4:
 		printf("Последняя цифра числа - не простое число");
 		break;
-	case '6':
+	case 6:
 		printf("Последняя цифра числа - не простое число");
 		break;
-	case '8':
+	case 8:
 		printf("Последняя цифра числа - не простое число");
 		break;
-	case '9':
+	case 9:
 		printf("Последняя цифра числа - не простое число");
 		break;
 	default:
